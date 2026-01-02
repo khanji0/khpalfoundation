@@ -1,0 +1,1146 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000000;
+    --primary-dark: #1a1a1a;
+    --accent-color: #d4af37;
+    --accent-light: #f5e6b8;
+    --text-dark: #1a1a1a;
+    --text-light: #666666;
+    --text-lighter: #999999;
+    --bg-light: #fafafa;
+    --bg-white: #ffffff;
+    --border-color: #e5e5e5;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 20px;
+}
+
+.nav-brand {
+    padding-left: 0;
+}
+
+.nav-brand h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.5px;
+}
+
+.urdu {
+    font-family: 'Arial', sans-serif;
+    font-weight: 400;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+.btn-donate-nav {
+    background: var(--accent-color);
+    color: var(--text-dark);
+    padding: 0.6rem 1.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    letter-spacing: 0.5px;
+}
+
+.btn-donate-nav:hover {
+    background: var(--accent-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
+                url('pictures/street.jpg') center/cover no-repeat;
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background: var(--accent-color);
+    color: var(--text-dark);
+    padding: 1rem 2.5rem;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    display: inline-block;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: var(--accent-light);
+    color: var(--text-dark);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 1px solid white;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: var(--primary-color);
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.btn-large {
+    padding: 1.2rem 3rem;
+    font-size: 1.2rem;
+}
+
+/* Section Styles */
+section {
+    padding: 3rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.underline {
+    width: 60px;
+    height: 2px;
+    background: var(--accent-color);
+    margin: 0 auto;
+}
+
+/* Mission Section */
+.mission {
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                url('pictures/kids.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.mission::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    z-index: 0;
+}
+
+.mission .container {
+    position: relative;
+    z-index: 1;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-text p {
+    margin-bottom: 1.2rem;
+}
+
+.mission-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.mission-lead {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    font-weight: 600;
+}
+
+.mission-lead strong {
+    color: var(--accent-color);
+}
+
+.mission-values {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.values-list {
+    margin-top: 1rem;
+    padding-left: 1.5rem;
+}
+
+.values-list li {
+    margin-bottom: 0.8rem;
+    color: var(--text-light);
+}
+
+.values-list li strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Our Story Section */
+.story {
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
+                url('pictures/kid1.jpg') center/cover no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    padding: 5rem 0;
+}
+
+.story::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 0;
+}
+
+.story .container {
+    position: relative;
+    z-index: 1;
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.story-text {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+}
+
+.story-text p {
+    margin-bottom: 1.2rem;
+    color: var(--text-dark);
+}
+
+.story-intro {
+    font-size: 1.2rem;
+    line-height: 1.9;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.story-highlight {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    margin: 2rem 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+}
+
+.story-call {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 1.5rem 0 2rem;
+    text-align: center;
+}
+
+.story-signature {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+}
+
+.signature-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-color);
+    flex-shrink: 0;
+}
+
+.signature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.signature-text {
+    text-align: right;
+}
+
+.signature-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0;
+    line-height: 1;
+    padding-bottom: 0;
+}
+
+.signature-title {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    margin-top: -0.3rem;
+    line-height: 1;
+}
+
+/* Statistics Section */
+.stats {
+    background: var(--bg-light);
+    padding: 3rem 0;
+}
+
+.stats-intro {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-top: 0.8rem;
+    font-weight: 400;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.stat-card {
+    text-align: center;
+    padding: 2rem 1.5rem;
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.stat-description {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Impact Section */
+.impact {
+    background: var(--bg-white);
+}
+
+.impact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.impact-card {
+    background: white;
+    padding: 2rem;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-color);
+}
+
+.impact-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 1.5rem;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.impact-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.impact-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+/* Support Section */
+.support {
+    background: var(--primary-color);
+    color: white;
+    position: relative;
+}
+
+.support::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('pictures/kids.jpg') center/cover no-repeat;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.support .container {
+    position: relative;
+    z-index: 1;
+}
+
+.support-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.support-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.support-lead {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 1.2rem;
+    color: var(--accent-color);
+    letter-spacing: 0.3px;
+}
+
+.support-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+}
+
+.donation-options {
+    margin-top: 1.5rem;
+}
+
+.donation-note {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    font-style: italic;
+}
+
+.support-image {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.support-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Contact Section */
+.contact {
+    background: var(--bg-white);
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-item h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.contact-item p {
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+.contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.social-links h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--bg-light);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    background: var(--accent-color);
+    color: var(--text-dark);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+.footer {
+    background: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.footer p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-mission {
+    color: var(--accent-color);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .nav-menu {
+        gap: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .support-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .mission {
+        background-attachment: scroll;
+    }
+
+    .story {
+        background-attachment: scroll;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .mission-content {
+        max-width: 100%;
+    }
+
+    .story-content {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+        padding: 0.8rem 15px;
+    }
+
+    .nav-brand {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.3rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .btn-donate-nav {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        margin-left: 0.5rem;
+    }
+
+    .nav-menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        margin-top: 0.8rem;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu li {
+        margin: 0;
+    }
+
+    .navbar {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .hero {
+        min-height: 70vh;
+        padding: 2rem 0;
+        margin-top: 0;
+    }
+
+    .navbar .container {
+        min-height: auto;
+    }
+
+    /* Account for navbar when menu wraps */
+    .navbar:has(.nav-menu) {
+        min-height: 80px;
+    }
+
+    .hero-content {
+        padding: 0 15px;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.3;
+        margin-bottom: 1rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+        padding: 0 10px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 0 10px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        text-align: center;
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .section-header {
+        margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+        padding: 0 10px;
+    }
+
+    section {
+        padding: 3rem 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .mission-content,
+    .story-content {
+        padding: 0 5px;
+    }
+
+    .mission-text,
+    .story-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .mission-lead {
+        font-size: 1.1rem;
+    }
+
+    .story-intro {
+        font-size: 1.05rem;
+    }
+
+    .story-highlight {
+        font-size: 1.1rem;
+        margin: 2rem 0;
+    }
+
+    .story-call {
+        font-size: 1.05rem;
+    }
+
+    .impact-content {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .impact-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .stat-number {
+        font-size: 2.5rem;
+    }
+
+    .stat-label {
+        font-size: 1.1rem;
+    }
+
+    .stats-grid {
+        gap: 1.5rem;
+    }
+
+    .stat-card {
+        padding: 2rem 1rem;
+    }
+
+    .support-content {
+        gap: 2rem;
+    }
+
+    .support-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .support-lead {
+        font-size: 1.3rem;
+    }
+
+    .support-text p {
+        font-size: 1rem;
+    }
+
+    .btn-large {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+
+    .contact-content {
+        gap: 2rem;
+    }
+
+    .contact-item {
+        margin-bottom: 2rem;
+    }
+
+    .contact-item h3 {
+        font-size: 1.1rem;
+    }
+
+    .social-links h3 {
+        font-size: 1.2rem;
+    }
+
+    .story-signature {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .signature-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .signature-text {
+        text-align: center;
+    }
+
+    .signature-name {
+        font-size: 1.1rem;
+    }
+
+    .signature-title {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar .container {
+        padding: 0.7rem 10px;
+    }
+
+    .nav-brand h1 {
+        font-size: 1.1rem;
+    }
+
+    .btn-donate-nav {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .nav-menu {
+        font-size: 0.75rem;
+        gap: 0.4rem;
+        margin-top: 0.6rem;
+    }
+
+    .hero {
+        min-height: 60vh;
+        margin-top: 0;
+    }
+
+    .hero-title {
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: 0.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero-buttons {
+        gap: 0.8rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.85rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    section {
+        padding: 2.5rem 0;
+    }
+
+    .container {
+        padding: 0 10px;
+    }
+
+    .mission-text,
+    .story-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .mission-lead {
+        font-size: 1rem;
+    }
+
+    .story-intro {
+        font-size: 1rem;
+    }
+
+    .story-highlight {
+        font-size: 1rem;
+        margin: 1.5rem 0;
+    }
+
+    .story-call {
+        font-size: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
+    }
+
+    .stat-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .impact-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .support-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .support-lead {
+        font-size: 1.2rem;
+    }
+
+    .support-text p {
+        font-size: 0.95rem;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .social-icons {
+        gap: 1rem;
+    }
+
+    .social-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .signature-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .signature-name {
+        font-size: 1rem;
+    }
+
+    .signature-title {
+        font-size: 0.85rem;
+    }
+}
+
