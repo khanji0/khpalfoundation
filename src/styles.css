@@ -134,7 +134,7 @@ body {
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)),
-                url('pictures/street.jpg') center/cover no-repeat;
+                url('../pictures/street.jpg') center/cover no-repeat;
     text-align: center;
     color: white;
     margin-top: 70px;
@@ -254,7 +254,7 @@ section {
 /* Mission Section */
 .mission {
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
-                url('pictures/kids.jpg') center/cover no-repeat;
+                url('../pictures/kids.jpg') center/cover no-repeat;
     background-attachment: fixed;
     position: relative;
 }
@@ -326,7 +326,7 @@ section {
 /* Our Story Section */
 .story {
     background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)),
-                url('pictures/kid1.jpg') center/cover no-repeat;
+                url('../pictures/kid1.jpg') center/cover no-repeat;
     background-attachment: fixed;
     position: relative;
     padding: 5rem 0;
